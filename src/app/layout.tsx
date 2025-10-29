@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${karla.className} ${karla.variable} antialiased`} suppressHydrationWarning>
+      <body className={`${karla.className} ${karla.variable} antialiased`}>
         <MainLayout>{children}</MainLayout>
       </body>
     </html>

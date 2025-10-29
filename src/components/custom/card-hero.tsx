@@ -43,7 +43,7 @@ const ReviewCard = ({ img, alt, index }: { img: string; alt: string; index: numb
 export const CardHero = () => {
   return (
     <div className="relative">
-      <Marquee pauseOnHover className="items-end [--duration:50s]">
+      <Marquee className="items-end [--duration:50s]">
         {reviews.map((review, index) => (
           <ReviewCard key={index} index={index} {...review} />
         ))}

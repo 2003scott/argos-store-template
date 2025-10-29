@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Store } from 'lucide-react';
+import { LuStore } from 'react-icons/lu';
 import { motion } from 'motion/react';
 
 export default function NotFound() {
@@ -53,7 +53,7 @@ export default function NotFound() {
         >
           <Button asChild>
             <Link href="/" className="flex items-center gap-2">
-              <Store />
+              <LuStore />
               Seguir comprando
             </Link>
           </Button>

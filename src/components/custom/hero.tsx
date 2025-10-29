@@ -123,9 +123,9 @@ export const Hero = () => {
         </motion.h1>
 
         <motion.p className="text-muted-foreground" variants={itemVariants}>
-          Dive into a world of flavor this summer with our collection of Sizzling Summer Delights!
+          Descubre tu estilo único con nuestra colección exclusiva de moda y accesorios.
           <br />
-          From refreshing appetizers to delightful desserts
+          Desde tendencias urbanas hasta piezas elegantes que transforman tu look.
         </motion.p>
 
         <motion.div className="flex items-center justify-center gap-5" variants={itemVariants}>

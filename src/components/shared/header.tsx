@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
+import { IoMenu } from 'react-icons/io5';
+import { IoMdClose } from 'react-icons/io';
 import { Button } from '../ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,19 +17,19 @@ export const Header = () => {
     },
     {
       label: 'Productos',
-      href: '#'
+      href: '/productos'
     },
     {
       label: 'Ofertas',
-      href: '#'
+      href: '/ofertas'
     },
     {
       label: 'Nuevos',
-      href: '#'
+      href: '/nuevos'
     },
     {
       label: 'Contactanos',
-      href: '#'
+      href: '/contactanos'
     }
   ];
 
@@ -63,17 +64,21 @@ export const Header = () => {
     }
   };
 
+  const MotionLink = motion.create(Link);
+
   return (
     <header className="bg-background/80 border-border sticky top-0 z-50 w-full border-b backdrop-blur-md">
       {/* Desktop Navigation */}
-      <nav className="hidden items-center justify-between px-6 py-4 md:flex lg:px-12">
+      <nav className="container hidden items-center justify-between py-4 md:flex lg:px-4 2xl:px-0">
         <motion.div variants={itemVariants} initial="hidden" animate="visible">
-          <Image src="/images/logo-argos.avif" alt="Arena Roja Logo" width={120} height={100} />
+          <Link href="/">
+            <Image src="/images/logo-argos.avif" alt="Arena Roja Logo" width={120} height={100} />
+          </Link>
         </motion.div>
 
         <motion.div className="flex items-center gap-8" variants={containerVariants} initial="hidden" animate="visible">
           {navItems.map((item) => (
-            <motion.a
+            <MotionLink
               key={item.label}
               variants={itemVariants}
               href={item.href}
@@ -86,7 +91,7 @@ export const Header = () => {
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
-            </motion.a>
+            </MotionLink>
           ))}
 
           <motion.div variants={itemVariants}>
@@ -98,7 +103,9 @@ export const Header = () => {
       {/* Mobile Navigation */}
       <div className="flex items-center justify-between px-4 py-4 md:hidden">
         <motion.div variants={itemVariants} initial="hidden" animate="visible">
-          <Image src="/images/logo-argos.avif" alt="Arena Roja Logo" width={120} height={100} />
+          <Link href="/">
+            <Image src="/images/logo-argos.avif" alt="Arena Roja Logo" width={120} height={100} />
+          </Link>
         </motion.div>
 
         <motion.button
@@ -116,7 +123,7 @@ export const Header = () => {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <X size={24} />
+                <IoMdClose size={24} />
               </motion.div>
             ) : (
               <motion.div
@@ -126,7 +133,7 @@ export const Header = () => {
                 exit={{ rotate: -90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <Menu size={24} />
+                <IoMenu size={24} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -145,14 +152,15 @@ export const Header = () => {
           >
             <motion.div className="space-y-4 px-4 py-4" variants={containerVariants} initial="hidden" animate="visible">
               {navItems.map((item) => (
-                <motion.a
+                <MotionLink
                   key={item.label}
                   variants={itemVariants}
                   href={item.href}
                   className="text-foreground hover:text-muted-foreground block py-2 text-sm font-medium transition-colors"
+                  onClick={() => setIsOpen(false)}
                 >
                   {item.label}
-                </motion.a>
+                </MotionLink>
               ))}
               <motion.div variants={itemVariants} className="border-border border-t pt-4">
                 <Button className="w-full">Iniciar Sesión</Button>

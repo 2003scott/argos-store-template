@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -75,10 +75,10 @@ function Carousel({
 
   const handleKeyDown = React.useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === 'ArrowLeft') {
+      if (event.key === 'FaArrowLeft') {
         event.preventDefault();
         scrollPrev();
-      } else if (event.key === 'ArrowRight') {
+      } else if (event.key === 'FaArrowRight') {
         event.preventDefault();
         scrollNext();
       }
@@ -177,7 +177,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft />
+      <FaArrowLeft />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -207,7 +207,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight />
+      <FaArrowRight />
       <span className="sr-only">Next slide</span>
     </Button>
   );
