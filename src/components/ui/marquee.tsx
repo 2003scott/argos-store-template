@@ -36,7 +36,7 @@ export function Marquee({
         .map((_, i) => (
           <div
             key={i}
-            className={cn('flex shrink-0 justify-around gap-(--gap)', {
+            className={cn('flex shrink-0 items-end justify-around gap-(--gap)', {
               'animate-marquee flex-row': !vertical && !reverse,
               'animate-marquee-vertical flex-col': vertical && !reverse,
               'animate-marquee-reverse flex-row': !vertical && reverse,

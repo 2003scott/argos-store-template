@@ -1,4 +1,5 @@
 import { Marquee } from '@/components/ui/marquee';
+import Image from 'next/image';
 
 const reviews = [
   {
@@ -28,17 +29,11 @@ const reviews = [
 ];
 
 const ReviewCard = ({ img, alt, index }: { img: string; alt: string; index: number }) => {
-  const height = index % 2 === 0 ? 'h-[280px]' : 'h-[200px]';
+  const heightClass = index % 2 === 0 ? 'h-[280px]' : 'h-[200px]';
 
   return (
-    <div className="flex items-end">
-      <img
-        className={`rounded-t-md rounded-b-sm object-cover ${height} w-[280px]`}
-        width="auto"
-        height="auto"
-        alt={alt}
-        src={img}
-      />
+    <div className={`relative ${heightClass} w-[280px]`}>
+      <Image className="rounded-t-md rounded-b-sm object-cover" fill alt={alt} src={img} unoptimized />
     </div>
   );
 };
@@ -46,7 +41,7 @@ const ReviewCard = ({ img, alt, index }: { img: string; alt: string; index: numb
 export const CardHero = () => {
   return (
     <div className="relative">
-      <Marquee pauseOnHover className="[--duration:50s]">
+      <Marquee pauseOnHover className="items-end [--duration:50s]">
         {reviews.map((review, index) => (
           <ReviewCard key={index} index={index} {...review} />
         ))}
