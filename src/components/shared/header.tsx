@@ -4,11 +4,33 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = ['Inicio', 'Productos', 'Ofertas', 'Nuevos', 'Contactanos'];
+  const navItems = [
+    {
+      label: 'Inicio',
+      href: '/'
+    },
+    {
+      label: 'Productos',
+      href: '#'
+    },
+    {
+      label: 'Ofertas',
+      href: '#'
+    },
+    {
+      label: 'Nuevos',
+      href: '#'
+    },
+    {
+      label: 'Contactanos',
+      href: '#'
+    }
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -52,12 +74,12 @@ export const Header = () => {
         <motion.div className="flex items-center gap-8" variants={containerVariants} initial="hidden" animate="visible">
           {navItems.map((item) => (
             <motion.a
-              key={item}
-              href="#"
+              key={item.label}
               variants={itemVariants}
+              href={item.href}
               className="text-foreground hover:text-muted-foreground group relative text-sm font-medium transition-colors duration-300"
             >
-              {item}
+              {item.label}
               <motion.div
                 className="bg-foreground absolute bottom-0 left-0 h-0.5"
                 initial={{ width: 0 }}
@@ -124,12 +146,12 @@ export const Header = () => {
             <motion.div className="space-y-4 px-4 py-4" variants={containerVariants} initial="hidden" animate="visible">
               {navItems.map((item) => (
                 <motion.a
-                  key={item}
-                  href="#"
+                  key={item.label}
                   variants={itemVariants}
+                  href={item.href}
                   className="text-foreground hover:text-muted-foreground block py-2 text-sm font-medium transition-colors"
                 >
-                  {item}
+                  {item.label}
                 </motion.a>
               ))}
               <motion.div variants={itemVariants} className="border-border border-t pt-4">

@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={`${karla.className} ${karla.variable} antialiased`}>
+    <html lang="es" suppressHydrationWarning>
+      <body className={`${karla.className} ${karla.variable} antialiased`} suppressHydrationWarning>
         <MainLayout>{children}</MainLayout>
       </body>
     </html>
