@@ -6,23 +6,23 @@ export const Footer = () => {
   const enlaces = [
     {
       nombre: 'Inicio',
-      href: '#'
+      href: '/'
     },
     {
       nombre: 'Productos',
-      href: '#'
+      href: '/productos'
     },
     {
       nombre: 'Ofertas',
-      href: '#'
+      href: '/ofertas'
     },
     {
       nombre: 'Nuevos',
-      href: '#'
+      href: '/nuevos'
     },
     {
       nombre: 'Contactanos',
-      href: '#'
+      href: '/contactanos'
     }
   ];
 
