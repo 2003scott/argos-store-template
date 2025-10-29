@@ -1,10 +1,9 @@
-import { Carousel, Marquee } from '@/atomic';
+import { Hero } from '@/components/custom/hero';
 
 export default function Home() {
   return (
-    <div className="container">
-      <Marquee />
-      <Carousel />
-    </div>
+    <>
+      <Hero />
+    </>
   );
 }

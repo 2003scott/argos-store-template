@@ -33,7 +33,7 @@ function MarqueeText({ children, baseVelocity = 200 }: MarqueeProps) {
   );
 }
 
-export const Marquee = () => {
+export const MarqueeHeader = () => {
   const messages = [
     'ENVÍO GRATUITO EN PEDIDOS SUPERIORES A S/ 100 PEN EN PERÚ',
     'ARGOS STORE - TU TIENDA DE CONFIANZA'
