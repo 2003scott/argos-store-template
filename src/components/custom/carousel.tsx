@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import { useRef } from 'react';
 import { EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel as C, CarouselContent, CarouselItem, CarouselPrevious } from '@/components/ui/carousel';
@@ -7,7 +7,7 @@ import { Carousel as C, CarouselContent, CarouselItem, CarouselPrevious } from '
 export const Carousel = () => {
   const OPTIONS: EmblaOptionsType = { loop: true };
 
-  const plugin = React.useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
   return (
     <C opts={OPTIONS} plugins={[plugin.current]} className="w-full">

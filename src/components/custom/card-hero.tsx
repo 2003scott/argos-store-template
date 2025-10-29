@@ -28,6 +28,8 @@ const reviews = [
   }
 ];
 
+console.log(reviews);
+
 const ReviewCard = ({ img, alt, index }: { img: string; alt: string; index: number }) => {
   const heightClass = index % 2 === 0 ? 'h-[280px]' : 'h-[200px]';
 
