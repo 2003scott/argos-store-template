@@ -19,7 +19,7 @@ function MarqueeText({ children, baseVelocity = 200 }: MarqueeProps) {
   const x = useTransform(baseX, (v) => `${wrap(0, -50, v)}%`);
 
   useAnimationFrame((_, delta) => {
-    let moveBy = directionFactor.current * Math.abs(baseVelocity) * (delta / 1000);
+    const moveBy = directionFactor.current * Math.abs(baseVelocity) * (delta / 1000);
     baseX.set(baseX.get() + moveBy);
   });
 
