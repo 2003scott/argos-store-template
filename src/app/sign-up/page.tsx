@@ -81,16 +81,28 @@ const SignUpPage = () => {
                 {currentStep === 1 && (
                   <>
                     <h2 className="text-center text-lg font-semibold">Información Personal</h2>
-                    <Inputform title="Nombres" type="text" className="w-full" />
-                    <Inputform title="Apellidos" type="text" className="w-full" />
-                    <Inputform title="Numero de Teléfono" type="tel" className="w-full" />
+                    <Inputform title="Nombres" type="text" className="w-full" placeholder="Ingresa tus nombres" />
+                    <Inputform title="Apellidos" type="text" className="w-full" placeholder="Ingresa tus apellidos" />
+                    <Inputform title="DNI" type="text" className="w-full" placeholder="Ingresa tu DNI" />
                   </>
                 )}
 
                 {currentStep === 2 && (
                   <>
                     <h2 className="text-center text-lg font-semibold">Información Adicional</h2>
-                    <Inputform title="Fecha de Nacimiento" type="date" className="w-full" />
+                    <Inputform
+                      title="Número de Teléfono"
+                      type="tel"
+                      className="w-full"
+                      placeholder="Ingresa tu número de teléfono"
+                    />
+                    <Inputform title="Dirección" type="text" className="w-full" placeholder="Ingresa tu dirección" />
+                    <Inputform
+                      title="Fecha de Nacimiento"
+                      type="date"
+                      className="w-full"
+                      placeholder="Ingresa tu fecha de nacimiento"
+                    />
                   </>
                 )}
 
