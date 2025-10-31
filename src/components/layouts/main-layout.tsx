@@ -18,7 +18,7 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <main>
       <MarqueeHeader />
       <Header />
-      <div className="container">{children}</div>
+      <div>{children}</div>
       <Footer />
     </main>
   );
