@@ -1,4 +1,3 @@
 export * from './marquee-header';
-export * from './card-hero';
-export * from './hero';
+export * from '../presentation/hero';
 export * from './carousel';

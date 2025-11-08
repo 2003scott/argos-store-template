@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '../ui/badge';
 import Link from 'next/link';
-import { CardHero } from './card-hero';
+import { CardHero } from '../custom/card-hero';
 import { motion } from 'framer-motion';
 
 export const Hero = () => {

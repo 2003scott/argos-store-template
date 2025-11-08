@@ -34,10 +34,7 @@ function MarqueeText({ children, baseVelocity = 200 }: MarqueeProps) {
 }
 
 export const MarqueeHeader = () => {
-  const messages = [
-    'ENVÍO GRATUITO EN PEDIDOS SUPERIORES A S/ 100 PEN EN PERÚ',
-    'ARGOS STORE - TU TIENDA DE CONFIANZA'
-  ];
+  const messages = ['ENVÍO GRATUITO EN PEDIDOS SUPERIORES A S/ 100 PEN EN PERÚ', 'ARENA ROJA - TU TIENDA DE CONFIANZA'];
 
   const renderItems = () => {
     const items: JSX.Element[] = [];
