@@ -1,6 +1,6 @@
 'use client';
-
 import { useState } from 'react';
+import { Badge } from '../ui/badge';
 
 interface CardProductProps {
   image: string;
@@ -8,20 +8,28 @@ interface CardProductProps {
   title: string;
   price: string;
   originalPrice: string;
+  badge?: string;
 }
 
-export const CardProduct = ({ image, hoverImage, title, price, originalPrice }: CardProductProps) => {
+export const CardProduct = ({ image, hoverImage, title, price, originalPrice, badge }: CardProductProps) => {
   const [currentImage, setCurrentImage] = useState(image);
 
   return (
     <div className="flex flex-col gap-5">
-      <img
-        src={currentImage}
-        alt={title}
-        onMouseEnter={() => setCurrentImage(hoverImage)}
-        onMouseLeave={() => setCurrentImage(image)}
-        className="cursor-pointer rounded-md transition-opacity duration-700"
-      />
+      <div className="group relative w-full">
+        <img
+          src={currentImage}
+          alt={title}
+          onMouseEnter={() => setCurrentImage(hoverImage)}
+          onMouseLeave={() => setCurrentImage(image)}
+          className="h-[18.563rem] w-full cursor-pointer rounded-md object-cover transition-opacity duration-700 sm:h-[26.25rem] md:h-[31.813rem] lg:h-[44.063rem] xl:h-[32.5rem]"
+        />
+        {badge && (
+          <Badge variant="secondary" className="absolute top-2 left-2 rounded-sm">
+            {badge}
+          </Badge>
+        )}
+      </div>
       <div className="flex flex-col gap-2">
         <h2 className="text-xs uppercase">{title}</h2>
         <div className="flex gap-2">

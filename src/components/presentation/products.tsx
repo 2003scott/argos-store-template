@@ -1,5 +1,6 @@
 import { title } from 'process';
 import { CardProduct } from '../custom/card-product';
+import { Button } from '../ui/button';
 
 export const Products = () => {
   const productsList = [
@@ -50,7 +51,8 @@ export const Products = () => {
         'https://arenaroja.com/cdn/shop/files/62C4430C-DC88-4B05-A085-3193DD1EE1E5.jpg?v=1747402690&width=360',
       title: 'Belon',
       price: '701.00',
-      originalPrice: '877.00'
+      originalPrice: '877.00',
+      badge: 'Nuevo'
     },
     {
       image: 'https://arenaroja.com/cdn/shop/files/Brazalete_4_perlas_copia3.jpg?v=1758560841&width=360',
@@ -74,10 +76,13 @@ export const Products = () => {
         <p className="text-sm font-light uppercase">PIEZAS de las que todos se han enamorado</p>
         <h3 className="text-md font-semibold uppercase">LO MÁS AMADO A LA VENTA. UNIDADES LIMITADAS.</h3>
       </div>
-      <div className="grid grid-cols-2 gap-2 lg:gap-4 xl:grid-cols-4">
+      <div className="grid grid-cols-2 items-center justify-center gap-2 lg:gap-4 xl:grid-cols-4">
         {productsList.map((product, index) => (
           <CardProduct key={index} {...product} />
         ))}
+      </div>
+      <div className="flex justify-center">
+        <Button>Ver todos los productos</Button>
       </div>
     </div>
   );
