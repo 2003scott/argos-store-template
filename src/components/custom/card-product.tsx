@@ -16,7 +16,7 @@ export const CardProduct = ({ image, hoverImage, title, price, originalPrice, ba
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="group relative w-full">
+      <div className="relative w-full">
         <img
           src={currentImage}
           alt={title}
@@ -25,7 +25,12 @@ export const CardProduct = ({ image, hoverImage, title, price, originalPrice, ba
           className="h-[18.563rem] w-full cursor-pointer rounded-md object-cover transition-opacity duration-700 sm:h-[26.25rem] md:h-[31.813rem] lg:h-[44.063rem] xl:h-[32.5rem]"
         />
         {badge && (
-          <Badge variant="secondary" className="absolute top-2 left-2 rounded-sm">
+          <Badge
+            variant="secondary"
+            className="absolute top-2 left-2 rounded-sm"
+            onMouseEnter={() => setCurrentImage(hoverImage)}
+            onMouseLeave={() => setCurrentImage(image)}
+          >
             {badge}
           </Badge>
         )}

@@ -1,9 +1,9 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { Badge } from '../ui/badge';
 import Link from 'next/link';
-import { CardHero } from '../custom/card-hero';
 import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
+import { CardHero } from '@/components/custom/card-hero';
 
 export const Hero = () => {
   const containerVariants = {
@@ -66,7 +66,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="container flex flex-1 flex-col justify-between gap-12 overflow-hidden py-8 sm:gap-16 sm:py-16 lg:gap-24 lg:py-20">
+    <section className="container flex flex-1 flex-col justify-between gap-12 overflow-hidden sm:gap-16 lg:gap-24">
       <motion.div
         className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8"
         variants={containerVariants}

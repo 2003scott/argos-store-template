@@ -1,6 +1,4 @@
-import { title } from 'process';
-import { CardProduct } from '../custom/card-product';
-import { Button } from '../ui/button';
+import { CardProduct } from '@/components/custom/card-product';
 
 export const Products = () => {
   const productsList = [
@@ -80,9 +78,6 @@ export const Products = () => {
         {productsList.map((product, index) => (
           <CardProduct key={index} {...product} />
         ))}
-      </div>
-      <div className="flex justify-center">
-        <Button>Ver todos los productos</Button>
       </div>
     </div>
   );

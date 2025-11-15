@@ -1,7 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { MarqueeHeader } from '../custom';
 import { Header, Footer } from '../shared';
+import { MarqueeHeader } from '../custom/marquee-header';
 
 export const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const path = usePathname();
