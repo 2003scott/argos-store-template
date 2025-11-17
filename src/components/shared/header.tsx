@@ -82,15 +82,11 @@ export const Header = () => {
               key={item.label}
               variants={itemVariants}
               href={item.href}
+              initial="hidden"
+              animate="visible"
               className="text-foreground hover:text-muted-foreground group relative text-sm font-medium transition-colors duration-300"
             >
               {item.label}
-              <motion.div
-                className="bg-foreground absolute bottom-0 left-0 h-0.5"
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.3 }}
-              />
             </MotionLink>
           ))}
 
@@ -158,6 +154,8 @@ export const Header = () => {
                   key={item.label}
                   variants={itemVariants}
                   href={item.href}
+                  initial="hidden"
+                  animate="visible"
                   className="text-foreground hover:text-muted-foreground block py-2 text-sm font-medium transition-colors"
                   onClick={() => setIsOpen(false)}
                 >

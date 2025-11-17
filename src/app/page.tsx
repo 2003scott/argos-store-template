@@ -6,12 +6,12 @@ import { VideoBackground } from '@/presentation/video';
 
 export default function Home() {
   return (
-    <>
+    <div className="space-y-10 lg:space-y-20">
       <Hero />
       <DiscountsCard />
       <Products />
       <Promotion />
       <VideoBackground />
-    </>
+    </div>
   );
 }

@@ -66,7 +66,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="container flex flex-1 flex-col justify-between gap-12 overflow-hidden sm:gap-16 lg:gap-24">
+    <section className="container flex flex-1 flex-col justify-between gap-12 overflow-hidden py-10 sm:gap-16 sm:pt-16 lg:gap-24 lg:pt-20">
       <motion.div
         className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8"
         variants={containerVariants}
