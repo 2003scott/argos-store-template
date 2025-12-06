@@ -3,6 +3,7 @@ import { Hero } from '@/presentation/hero';
 import { Products } from '@/presentation/products';
 import { Promotion } from '@/presentation/promotion';
 import { VideoBackground } from '@/presentation/video';
+import { Wsaap } from '@/presentation/wsaap';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Products />
       <Promotion />
       <VideoBackground />
+      <Wsaap />
     </div>
   );
 }
