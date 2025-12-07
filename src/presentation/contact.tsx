@@ -7,15 +7,23 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast } from 'sonner';
 
+interface ContactFormData {
+  names: string;
+  surnames: string;
+  email: string;
+  tel: string;
+  message: string;
+}
+
 export const Contact = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
-  } = useForm();
+  } = useForm<ContactFormData>();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: ContactFormData) => {
     const dataMapper = {
       names: data.names,
       surnames: data.surnames,
