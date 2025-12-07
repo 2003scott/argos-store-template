@@ -10,7 +10,7 @@ type Props = {
 
 const Inputform = React.forwardRef<HTMLInputElement, Props>(({ error, id, title, className = '', ...props }, ref) => {
   return (
-    <div className={`${className} space-y-1 [&_*]:w-full`}>
+    <div className={`${className} space-y-1 **:w-full`}>
       <label className="space-y-1 text-[0.9rem] font-medium select-none" htmlFor={id}>
         <p>{title}</p>
         <Input autoComplete="off" id={id} ref={ref} {...props} />

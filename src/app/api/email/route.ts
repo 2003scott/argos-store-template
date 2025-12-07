@@ -11,13 +11,13 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request: Request) {
   try {
-    const { to } = await request.json();
+    const { to, subject, text } = await request.json();
 
     const mailOptions = {
       from: process.env.GOOGLE_USER,
       to: to,
-      subject: 'Argos Store',
-      text: 'This is a test email sent from a Next.js API route using Nodemailer.'
+      subject: subject,
+      text: text
     };
 
     const info = await transporter.sendMail(mailOptions);

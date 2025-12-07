@@ -1,3 +1,4 @@
+import { Contact } from '@/presentation/contact';
 import { DiscountsCard } from '@/presentation/discounts-card';
 import { Faq } from '@/presentation/faq';
 import { Hero } from '@/presentation/hero';
@@ -13,8 +14,9 @@ export default function Home() {
       <DiscountsCard />
       <Products />
       <Promotion />
-      <VideoBackground />
       <Faq />
+      <VideoBackground />
+      <Contact />
       <Wsaap />
     </div>
   );

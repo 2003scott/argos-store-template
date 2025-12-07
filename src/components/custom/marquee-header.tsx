@@ -52,7 +52,7 @@ export const MarqueeHeader = () => {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-black py-[10px] text-[9px] font-bold text-white md:text-xs">
+    <section className="bg-primary w-full overflow-hidden py-2.5 text-[9px] font-bold text-white md:text-xs">
       <MarqueeText baseVelocity={-1}>{renderItems()}</MarqueeText>
     </section>
   );

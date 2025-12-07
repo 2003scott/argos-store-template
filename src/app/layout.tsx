@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning className="!scroll-smooth">
-      <body className={`${karla.className} ${karla.variable} !scroll-smooth antialiased`}>
+    <html lang="es" suppressHydrationWarning>
+      <body className={`${karla.className} ${karla.variable} scroll-smooth! antialiased`}>
         <MainLayout>{children}</MainLayout>
       </body>
     </html>
