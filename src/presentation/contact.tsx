@@ -1,9 +1,40 @@
+'use client';
 import { Inputform } from '@/components/custom/input-form';
 import { TextAreaform } from '@/components/custom/textarea-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import { toast } from 'sonner';
 
 export const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    const dataMapper = {
+      names: data.names,
+      surnames: data.surnames,
+      to: data.email,
+      subject: 'Nuevo mensaje de contacto',
+      tel: data.tel,
+      text: data.message
+    };
+    axios
+      .post('/api/contact', dataMapper)
+      .then((response) => {
+        reset();
+        toast.success(response.data.message);
+      })
+      .catch(() => {
+        toast.error('Error al enviar el mensaje. Por favor, intenta de nuevo.');
+      });
+  };
+
   return (
     <section className="container space-y-4 px-4 md:px-0">
       <div className="items-center justify-center text-center">
@@ -12,13 +43,45 @@ export const Contact = () => {
       </div>
       <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
         <Card className="p-4">
-          <form className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <Inputform title="Nombres" placeholder="Ingresa tus nombres" type="text" />
-            <Inputform title="Apellidos" placeholder="Ingresa tus apellidos" type="text" />
-            <Inputform title="Correo Electrónico" placeholder="Ingresa tu correo electrónico" type="email" />
-            <Inputform title="Teléfono" placeholder="Ingresa tu teléfono" type="tel" />
-            <TextAreaform title="Mensaje" placeholder="Escribe tu mensaje aquí" className="col-span-full" />
-            <Button className="col-span-full">Enviar Mensaje</Button>
+          <form className="grid grid-cols-1 gap-4 lg:grid-cols-2" onSubmit={handleSubmit(onSubmit)}>
+            <Inputform
+              title="Nombres"
+              placeholder="Ingresa tus nombres"
+              type="text"
+              {...register('names', { required: true })}
+              error={errors.names && 'El nombre es requerido'}
+            />
+            <Inputform
+              title="Apellidos"
+              placeholder="Ingresa tus apellidos"
+              type="text"
+              {...register('surnames', { required: true })}
+              error={errors.surnames && 'El apellido es requerido'}
+            />
+            <Inputform
+              title="Correo Electrónico"
+              placeholder="Ingresa tu correo electrónico"
+              type="email"
+              {...register('email', { required: true })}
+              error={errors.email && 'El correo es requerido'}
+            />
+            <Inputform
+              title="Teléfono"
+              placeholder="Ingresa tu teléfono"
+              type="tel"
+              {...register('tel', { required: true })}
+              error={errors.tel && 'El teléfono es requerido'}
+            />
+            <TextAreaform
+              title="Mensaje"
+              placeholder="Escribe tu mensaje aquí"
+              className="col-span-full"
+              {...register('message', { required: true })}
+              error={errors.message && 'El mensaje es requerido'}
+            />
+            <Button className="col-span-full" type="submit">
+              Enviar Mensaje
+            </Button>
           </form>
         </Card>
         <iframe

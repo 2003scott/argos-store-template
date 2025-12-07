@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Karla } from 'next/font/google';
 import './globals.css';
 import { MainLayout } from '@/components/layouts';
+import { Toaster, toast } from 'sonner';
 
 const karla = Karla({
   subsets: ['latin', 'latin-ext'],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${karla.className} ${karla.variable} scroll-smooth! antialiased`}>
+        <Toaster richColors />
         <MainLayout>{children}</MainLayout>
       </body>
     </html>
