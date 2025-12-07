@@ -147,7 +147,7 @@ const SignUpPage = () => {
         <div className="flex flex-col items-center justify-center gap-4">
           <p className="text-center text-sm">
             ¿Ya tienes cuenta?{' '}
-            <Link href="/sign-in" className="font-semibold hover:underline">
+            <Link href="/auth/sign-in" className="font-semibold hover:underline">
               Inicia sesión aquí
             </Link>
           </p>

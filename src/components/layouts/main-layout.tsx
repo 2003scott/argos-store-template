@@ -8,7 +8,7 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
   console.log('Current path:', path);
 
-  const voidLayout = ['/sign-in', '/sign-up'];
+  const voidLayout = ['/auth/sign-in', '/auth/sign-up'];
 
   if (voidLayout.includes(path)) {
     return <main>{children}</main>;

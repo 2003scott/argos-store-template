@@ -92,7 +92,7 @@ export const Header = () => {
 
           <motion.div variants={itemVariants}>
             <Button className="w-full" asChild>
-              <Link href="/sign-in">Iniciar Sesión</Link>
+              <Link href="/auth/sign-in">Iniciar Sesión</Link>
             </Button>
           </motion.div>
         </motion.div>
@@ -164,7 +164,7 @@ export const Header = () => {
               ))}
               <motion.div variants={itemVariants} className="border-border border-t pt-4">
                 <Button className="w-full" asChild>
-                  <Link href="/sign-in">Iniciar Sesión</Link>
+                  <Link href="/auth/sign-in">Iniciar Sesión</Link>
                 </Button>
               </motion.div>
             </motion.div>

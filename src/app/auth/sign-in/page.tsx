@@ -94,7 +94,7 @@ const SignInPage = () => {
 
             <motion.p variants={itemVariants} className="text-center text-sm">
               ¿No tienes cuenta?{' '}
-              <Link href="/sign-up" className="font-semibold hover:underline">
+              <Link href="/auth/sign-up" className="font-semibold hover:underline">
                 Regístrate aquí
               </Link>
             </motion.p>

@@ -1,4 +1,5 @@
 import { DiscountsCard } from '@/presentation/discounts-card';
+import { Faq } from '@/presentation/faq';
 import { Hero } from '@/presentation/hero';
 import { Products } from '@/presentation/products';
 import { Promotion } from '@/presentation/promotion';
@@ -13,6 +14,7 @@ export default function Home() {
       <Products />
       <Promotion />
       <VideoBackground />
+      <Faq />
       <Wsaap />
     </div>
   );
