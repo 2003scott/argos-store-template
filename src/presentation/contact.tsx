@@ -44,7 +44,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className="container space-y-4 px-4 md:px-0">
+    <section className="container space-y-4 px-4 2xl:px-0">
       <div className="items-center justify-center text-center">
         <h2 className="text-md text-start font-semibold uppercase">Contactanos</h2>
         <p className="text-start text-sm font-light uppercase">Para consultas y soporte, envíanos un correo</p>

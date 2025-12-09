@@ -3,7 +3,7 @@ import { GrShop } from 'react-icons/gr';
 
 export const Promotion = () => {
   return (
-    <div className="container px-4 md:px-0">
+    <div className="container px-4 2xl:px-0">
       <h2 className="text-md text-center font-semibold uppercase">Promocion Especial</h2>
       <p className="text-center text-sm font-light uppercase">
         Aprovecha nuestra oferta exclusiva por tiempo limitado.

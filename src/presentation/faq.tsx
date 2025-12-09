@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 
 export const Faq = () => {
   return (
-    <div className="container px-4 md:px-0">
+    <div className="container px-4 2xl:px-0">
       <div className="grid items-start md:grid-cols-2">
         <div className="space-y-2">
           <Badge>FAQ</Badge>

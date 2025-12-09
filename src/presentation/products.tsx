@@ -69,7 +69,7 @@ export const Products = () => {
   ];
 
   return (
-    <div className="container flex flex-col gap-6 px-4 pb-10 lg:px-0">
+    <div className="container flex flex-col gap-6 px-4 pb-10 2xl:px-0">
       <div>
         <p className="text-sm font-light uppercase">PIEZAS de las que todos se han enamorado</p>
         <h3 className="text-md font-semibold uppercase">LO MÁS AMADO A LA VENTA. UNIDADES LIMITADAS.</h3>

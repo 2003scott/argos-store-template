@@ -35,7 +35,7 @@ export const Footer = () => {
 
   return (
     <footer>
-      <div className="container space-y-8 px-4 py-10 sm:px-6 lg:space-y-12 lg:px-8 2xl:px-0">
+      <div className="container space-y-8 px-4 py-10 lg:space-y-12 2xl:px-0">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <Image src="/images/logo-argos.avif" alt="Arena Roja Logo" width={120} height={100} />

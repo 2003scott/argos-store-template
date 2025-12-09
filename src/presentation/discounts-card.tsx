@@ -20,7 +20,7 @@ export const DiscountsCard = () => {
   ];
 
   return (
-    <div className="container flex flex-col gap-6 px-4 lg:px-0">
+    <div className="container flex flex-col gap-6 px-4 2xl:px-0">
       <div>
         <p className="text-sm font-light uppercase">Ofertas especiales</p>
         <h3 className="text-md font-semibold uppercase">PEQUEÑOS PRECIOS, MISMO VALOR</h3>
