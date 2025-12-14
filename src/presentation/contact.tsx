@@ -3,9 +3,10 @@ import { Inputform } from '@/components/custom/input-form';
 import { TextAreaform } from '@/components/custom/textarea-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast } from 'sonner';
+import { useState } from 'react';
 
 interface ContactFormData {
   names: string;
@@ -23,7 +24,10 @@ export const Contact = () => {
     formState: { errors }
   } = useForm<ContactFormData>();
 
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = (data: ContactFormData) => {
+    setLoading(true);
     const dataMapper = {
       names: data.names,
       surnames: data.surnames,
@@ -36,9 +40,11 @@ export const Contact = () => {
       .post('/api/contact', dataMapper)
       .then((response) => {
         reset();
+        setLoading(false);
         toast.success(response.data.message);
       })
       .catch(() => {
+        setLoading(false);
         toast.error('Error al enviar el mensaje. Por favor, intenta de nuevo.');
       });
   };
@@ -87,8 +93,8 @@ export const Contact = () => {
               {...register('message', { required: true })}
               error={errors.message && 'El mensaje es requerido'}
             />
-            <Button className="col-span-full" type="submit">
-              Enviar Mensaje
+            <Button className="col-span-full" type="submit" disabled={loading}>
+              {loading ? 'Enviando...' : 'Enviar Mensaje'}
             </Button>
           </form>
         </Card>
